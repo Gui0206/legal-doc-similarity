@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "num_cases": 40,
+    "seed": 7,
+    "total_docs": 240
+  },
+  "thresholds_2eixos": {
+    "copy_lex": 0.1,
+    "copy_sem": 0.95,
+    "ver_lex": 0.1,
+    "ver_sem": 0.1
+  },
+  "thresholds_baselines": {
+    "semantico": [
+      0.95,
+      0.92
+    ],
+    "lexical": [
+      0.41,
+      0.08
+    ]
+  },
+  "split": {
+    "train_pairs": 100,
+    "test_pairs": 100
+  },
+  "lsh_candidate_recall": {
+    "relevant_pairs": 120,
+    "retrieved": 120,
+    "recall": 1.0
+  },
+  "cascata_custo": {
+    "tier0_hash_exato": 20,
+    "auto_resolvido_sem_llm": 98,
+    "roteado_ao_llm_tier3": 2,
+    "pct_roteado_llm": 0.02,
+    "acuracia_nos_auto_resolvidos": 1.0
+  },
+  "modelos": [
+    {
+      "name": "2 eixos (lexical + semantico)",
+      "macro_f1": 1.0,
+      "accuracy": 1.0,
+      "false_merge_rate": 0.0,
+      "per_class": {
+        "copia": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "versao": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "diferente": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          40,
+          0,
+          0
+        ],
+        [
+          0,
+          20,
+          0
+        ],
+        [
+          0,
+          0,
+          40
+        ]
+      ]
+    },
+    {
+      "name": "baseline so-semantica (cosseno)",
+      "macro_f1": 0.9755799755799756,
+      "accuracy": 0.98,
+      "false_merge_rate": 0.05,
+      "per_class": {
+        "copia": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "versao": {
+          "precision": 0.9090909090909091,
+          "recall": 1.0,
+          "f1": 0.9523809523809523
+        },
+        "diferente": {
+          "precision": 1.0,
+          "recall": 0.95,
+          "f1": 0.9743589743589743
+        }
+      },
+      "confusion_matrix": [
+        [
+          40,
+          0,
+          0
+        ],
+        [
+          0,
+          20,
+          0
+        ],
+        [
+          0,
+          2,
+          38
+        ]
+      ]
+    },
+    {
+      "name": "baseline so-lexical (jaccard idf)",
+      "macro_f1": 0.9639777682168026,
+      "accuracy": 0.97,
+      "false_merge_rate": 0.025,
+      "per_class": {
+        "copia": {
+          "precision": 1.0,
+          "recall": 0.95,
+          "f1": 0.9743589743589743
+        },
+        "versao": {
+          "precision": 0.8695652173913043,
+          "recall": 1.0,
+          "f1": 0.9302325581395349
+        },
+        "diferente": {
+          "precision": 1.0,
+          "recall": 0.975,
+          "f1": 0.9873417721518988
+        }
+      },
+      "confusion_matrix": [
+        [
+          38,
+          2,
+          0
+        ],
+        [
+          0,
+          20,
+          0
+        ],
+        [
+          0,
+          1,
+          39
+        ]
+      ]
+    }
+  ],
+  "robustez_5_seeds": {
+    "2 eixos (lexical + semantico)": {
+      "macro_f1_mean": 0.985441650642653,
+      "macro_f1_std": 0.014047925205783504,
+      "false_merge_mean": 0.015000000000000001,
+      "false_merge_std": 0.02
+    },
+    "baseline so-semantica (cosseno)": {
+      "macro_f1_mean": 0.9829717525259503,
+      "macro_f1_std": 0.012240527361794137,
+      "false_merge_mean": 0.02,
+      "false_merge_std": 0.01870828693386971
+    },
+    "baseline so-lexical (jaccard idf)": {
+      "macro_f1_mean": 0.9494123102711415,
+      "macro_f1_std": 0.02864939156274035,
+      "false_merge_mean": 0.01,
+      "false_merge_std": 0.012247448713915891
+    }
+  },
+  "amostras_armadilha_boilerplate": [
+    {
+      "par": "case_000_base x case_000_diffarea",
+      "semantic_cosine": 0.909,
+      "weighted_jaccard": 0.0,
+      "pred_2eixos": "diferente",
+      "pred_so_semantica": "diferente"
+    },
+    {
+      "par": "case_001_base x case_001_diffarea",
+      "semantic_cosine": 0.926,
+      "weighted_jaccard": 0.081,
+      "pred_2eixos": "diferente",
+      "pred_so_semantica": "versao"
+    },
+    {
+      "par": "case_002_base x case_002_diffarea",
+      "semantic_cosine": 0.911,
+      "weighted_jaccard": 0.0,
+      "pred_2eixos": "diferente",
+      "pred_so_semantica": "diferente"
+    },
+    {
+      "par": "case_003_base x case_003_diffarea",
+      "semantic_cosine": 0.897,
+      "weighted_jaccard": 0.0,
+      "pred_2eixos": "diferente",
+      "pred_so_semantica": "diferente"
+    },
+    {
+      "par": "case_004_base x case_004_diffarea",
+      "semantic_cosine": 0.902,
+      "weighted_jaccard": 0.0,
+      "pred_2eixos": "diferente",
+      "pred_so_semantica": "diferente"
+    },
+    {
+      "par": "case_005_base x case_005_diffarea",
+      "semantic_cosine": 0.908,
+      "weighted_jaccard": 0.037,
+      "pred_2eixos": "diferente",
+      "pred_so_semantica": "diferente"
+    },
+    {
+      "par": "case_006_base x case_006_diffarea",
+      "semantic_cosine": 0.9,
+      "weighted_jaccard": 0.0,
+      "pred_2eixos": "diferente",
+      "pred_so_semantica": "diferente"
+    },
+    {
+      "par": "case_007_base x case_007_diffarea",
+      "semantic_cosine": 0.901,
+      "weighted_jaccard": 0.032,
+      "pred_2eixos": "diferente",
+      "pred_so_semantica": "diferente"
+    }
+  ]
+}
