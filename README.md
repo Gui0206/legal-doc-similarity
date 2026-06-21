@@ -1,8 +1,9 @@
-# Questão 1 — Similaridade entre documentos jurídicos (validação em código)
+# Similaridade entre documentos jurídicos — cópia, versão ou diferente
 
-Protótipo executável que **valida a solução desenhada para a Questão 1**: detectar
-quando dois documentos de um mesmo caso são *cópia*, *versão modificada* ou
-*documento diferente*, sem ser enganado pelo vocabulário jurídico compartilhado.
+Protótipo executável que **valida uma abordagem para detecção de similaridade entre
+documentos jurídicos**: decidir se dois documentos de um mesmo caso são *cópia*,
+*versão modificada* ou *documento diferente*, sem ser enganado pelo vocabulário
+jurídico compartilhado.
 
 **Autor:** Guilherme Holanda Marques
 

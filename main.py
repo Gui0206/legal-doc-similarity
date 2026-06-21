@@ -1,4 +1,4 @@
-"""Executa a validação completa da Questão 1.
+"""Executa a validação completa da abordagem de similaridade.
 
   python main.py
 
@@ -161,7 +161,7 @@ def _plot(scored, pairs, th, path):
 
 def _print_summary(out):
     print("=" * 78)
-    print("VALIDAÇÃO — QUESTÃO 1: similaridade entre documentos jurídicos")
+    print("VALIDAÇÃO — Similaridade entre documentos jurídicos")
     print("=" * 78)
     m = out["meta"]
     print(f"Corpus: {m['num_cases']} casos, {m['total_docs']} documentos (seed={m['seed']}) | "
